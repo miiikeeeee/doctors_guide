@@ -49,6 +49,8 @@ function App() {
                </select>
             </div>
          </header>
+        
+         <p style={{textAlign: 'left'}}>Page: {currentPage}</p>
 
          {/* Content */}
          <div className="content">

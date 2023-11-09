@@ -131,7 +131,7 @@ button:hover {
 }
 
 .req li {
-   text-align: center;
+   text-align: left;
 
    padding-left: 20px;
    list-style: outside;
