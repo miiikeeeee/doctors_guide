@@ -61,6 +61,13 @@ body {
    border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+   .header {
+      flex-direction: column;
+      padding: 20px;
+   }
+}
+
 section {
    padding: 20px;
 }

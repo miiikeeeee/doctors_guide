@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { languageFlags, languages } from "./constants/translation";
-import "./App.scss";
+import "./App.css";
 import GermanyMap from "./components/GermanyMap/GermanyMap";
 import ApplicationApprovalChecklist from "./components/Approval/ThirdStep";
+import germany from '../assets/germany.jpg';
 
 function App() {
    const storedPage = localStorage.getItem("currentPage");
@@ -54,7 +55,6 @@ function App() {
             {currentPage === 1 && (
                <div className="page">
                   <h1>{languages[selectedLanguage].welcome}</h1>
-
                   <ul className="req">
                      <h2>{languages[selectedLanguage].requirements.title}</h2>
                      <li>
@@ -80,6 +80,8 @@ function App() {
                <div className="page">
                   {/* Second page content */}
                   <h2>{languages[selectedLanguage].choose_region}</h2>
+                  <img style={{objectFit: "cover", width: '100%', maxWidth: '500px', height: "400px"}} src={germany} alt="" />
+
                   <GermanyMap />
                   <button onClick={handlePrevPage}>
                      {languages[selectedLanguage].back}
