@@ -1,6 +1,11 @@
-import { defineConfig } from 'vite';
+// vite.config.js
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
+export default {
   plugins: [react()],
-});
+  build: {
+    rollupOptions: {
+      external: ['react', 'react-dom', 'react-leaflet'],
+    },
+  },
+};

@@ -57,14 +57,14 @@ const GermanyMap = () => {
       }
    }, [selectedRegion]);
 
-     // Restore selected region from local storage on component mount
-  useEffect(() => {
-   const storedRegion = localStorage.getItem("selectedRegion");
-   if (storedRegion) {
-     setClickedState({ [storedRegion]: true });
-     setSelectedRegion(storedRegion);
-   }
- }, []);
+   // Restore selected region from local storage on component mount
+   useEffect(() => {
+      const storedRegion = localStorage.getItem("selectedRegion");
+      if (storedRegion) {
+         setClickedState({ [storedRegion]: true });
+         setSelectedRegion(storedRegion);
+      }
+   }, []);
 
    const center = [51.1657, 10.4515];
    return (
