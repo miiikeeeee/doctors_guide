@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Polygon } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css';
+
 import { statesData } from "./data";
 
 const regions = [
