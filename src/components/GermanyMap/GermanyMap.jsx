@@ -1,52 +1,169 @@
 import { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Polygon } from "react-leaflet";
+import "./map.css";
+// const regions = [
+//    "Baden-Württemberg",
+//    "Bayern",
+//    "Berlin",
+//    "Brandenburg",
+//    "Bremen",
+//    "Hamburg",
+//    "Hessen",
+//    "Mecklenburg-Vorpommern",
+//    "Niedersachsen",
+//    "Nordrhein-Westfalen",
+//    "Rheinland-Pfalz",
+//    "Saarland",
+//    "Sachsen",
+//    "Sachsen-Anhalt",
+//    "Schleswig-Holstein",
+//    "Thüringen",
+// ];
 
-import { statesData } from "./data";
+import state1 from "../../assets/states/Baden-W.svg";
+import state2 from "../../assets/states/Brandenburg.svg";
+import state3 from "../../assets/states/MecklenburgVorpommern.svg";
+import state4 from "../../assets/states/Niedersachsen.svg";
+import state5 from "../../assets/states/NRW.svg";
+import state6 from "../../assets/states/Saarland.svg";
+import state7 from "../../assets/states/Sachsen-Anhalt.svg";
+import state8 from "../../assets/states/Sachsen.svg";
+import state9 from "../../assets/states/Thüringen.svg";
+import state10 from "../../assets/states/Schleswig-Holstein.svg";
+import state11 from "../../assets/states/Thüringen.svg";
+import state12 from "../../assets/states/Rheinland-Pfalz.svg";
+import state13 from "../../assets/states/Bayern.svg";
+import state14 from "../../assets/states/Berlin.svg";
+import state15 from "../../assets/states/Bremen.svg";
+import state16 from "../../assets/states/Hessen.svg";
 
-const regions = [
-   "Baden-Württemberg",
-   "Bayern",
-   "Berlin",
-   "Brandenburg",
-   "Bremen",
-   "Hamburg",
-   "Hessen",
-   "Mecklenburg-Vorpommern",
-   "Niedersachsen",
-   "Nordrhein-Westfalen",
-   "Rheinland-Pfalz",
-   "Saarland",
-   "Sachsen",
-   "Sachsen-Anhalt",
-   "Schleswig-Holstein",
-   "Thüringen",
+// Individual state component
+const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
+   // Import SVG dynamically using require
+   return (
+    
+      <div
+      style={{
+        position: "absolute",
+        left: `${x}px`,
+        top: `${y}px`,
+        width: "100%", // Adjust as needed based on your design
+        height: "100%", // Adjust as needed based on your design
+      }}
+      className="map_item"
+    >
+      <span onClick={() => onClick(name)} className={`state_${idx}`}>{name}</span>
+      <img
+        id={id}
+        src={img}
+        alt={name}
+        style={{
+          width: "100%", // Maintain the original width of the image
+          height: "100%", // Maintain the original height of the image
+          objectFit: "cover",
+        }}
+      />
+      </div>
+   );
+};
+
+const germanyStates = [
+   {
+      id: "BadenW",
+      name: "Baden-Württemberg",
+      img: state1,
+      x: 68,
+      y: 128,
+   },
+   {
+      id: "Brandenburg",
+      name: "Brandenburg",
+      img: state2,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "MecklenburgVorpommern",
+      name: "Mecklenburg Vorpommern",
+      img: state3,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "Niedersachsen",
+      name: "Niedersachsen",
+      img: state4,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "NRW",
+      name: "Nordrhein-Westfalen",
+      img: state5,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "Saarland",
+      name: "Saarland",
+      img: state6,
+      x: -30,
+      y: 50,
+   },
+   {
+      id: "SachsenAnhalt",
+      name: "Sachsen-Anhalt",
+      img: state7,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "Sachsen",
+      name: "Sachsen",
+      img: state8,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "Thueringen",
+      name: "Thüringen",
+      img: state9,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "SchleswigHolstein",
+      name: "Schleswig-Holstein",
+      img: state10,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "Thueringen",
+      name: "Thüringen",
+      img: state11,
+      x: 0 ,
+      y: 40,
+   },
+   {
+      id: "RheinlandPfalz",
+      name: "Rheinland-Pfalz",
+      img: state12,
+      x: -45,
+      y: 58,
+   },
+   { id: "Bayern", name: "Bayern", img: state13, x: 0, y: 40 },
+   { id: "Berlin", name: "Berlin", img: state14, x: 0, y: 40 },
+   { id: "Bremen", name: "Bremen", img: state15, x: 0, y: 40 },
+   { id: "Hessen", name: "Hessen", img: state16, x: 0, y: 40 },
 ];
 
 const GermanyMap = () => {
    const storedRegion = localStorage.getItem("selectedRegion");
    const initialRegion = storedRegion ? storedRegion : null;
    const [selectedRegion, setSelectedRegion] = useState(initialRegion);
-   const [clickedState, setClickedState] = useState({});
 
-   const handleRegionClick = (e) => {
-      const regionName = e.target.options.name;
-      const newClickedState = {};
-
-      // Unselect all regions
-      Object.keys(clickedState).forEach((key) => {
-         newClickedState[key] = false;
-      });
-
-      // Select the clicked region
-      newClickedState[regionName] = true;
-
-      // Set the new clicked state and update the selected region
-      setClickedState(newClickedState);
-      setSelectedRegion(regionName);
-   };
-
-   const handleRegionChoose = (e) => {
-      setSelectedRegion(e.target.value);
+   const handleRegionChoose = (region) => {
+      setSelectedRegion(region);
    };
 
    useEffect(() => {
@@ -61,93 +178,39 @@ const GermanyMap = () => {
    useEffect(() => {
       const storedRegion = localStorage.getItem("selectedRegion");
       if (storedRegion) {
-         setClickedState({ [storedRegion]: true });
          setSelectedRegion(storedRegion);
       }
    }, []);
 
-   const center = [51.1657, 10.4515];
    return (
       <div>
-         <MapContainer
-            center={center}
-            zoom={5}
-            style={{ width: "100%", height: "50vh" }}
+         <div
+            style={{
+               position: "relative",
+               overflow: "hidden",
+               width: "100%",
+               height: "620px",
+            }}
          >
-            <TileLayer
-               url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=5sO1hpTNMVYZUoDzY8gO"
-               attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-            />
-            {statesData.features.map((state, idx) => {
-               const coordinates = state.geometry.coordinates[0].map((item) => [
-                  item[1],
-                  item[0],
-               ]);
-               const regionName = state.properties.name;
-
-               return (
-                  <Polygon
-                     key={idx}
-                     pathOptions={{
-                        fillColor: clickedState[regionName]
-                           ? "#BD0026"
-                           : "#FD8D3C",
-                        fillOpacity: 0.7,
-                        weight: 2,
-                        opacity: 1,
-                        dashArray: 3,
-                        color: "white",
-                     }}
-                     positions={coordinates}
-                     eventHandlers={{
-                        click: handleRegionClick,
-                        mouseover: (e) => {
-                           const layer = e.target;
-                           layer.setStyle({
-                              dashArray: "",
-                              fillColor: "#BD0026",
-                              fillOpacity: 0.7,
-                              weight: 2,
-                              opacity: 1,
-                              color: "white",
-                           });
-                        },
-                        mouseout: (e) => {
-                           const layer = e.target;
-                           layer.setStyle({
-                              fillOpacity: 0.7,
-                              weight: 2,
-                              dashArray: "3",
-                              color: "white",
-                              fillColor: clickedState[regionName]
-                                 ? "#BD0026"
-                                 : "#FD8D3C",
-                           });
-                        },
-                     }}
-                     name={regionName}
-                  />
-               );
-            })}
-         </MapContainer>
-         <select
-            id="bundeslandAuswahl"
-            onChange={handleRegionChoose}
-            value={selectedRegion}
-         >
-            <option value="">Select a Region</option>
-            {regions.map((region, index) => (
-               <option key={index} value={region}>
-                  {region}
-               </option>
+            {/* Render each state component dynamically */}
+            {germanyStates.map((state, idx) => (
+               <StateComponent
+                  key={state.id}
+                  id={state.id}
+                  name={state.name}
+                  img={state.img}
+                  x={state.x}
+                  y={state.y}
+                  onClick={handleRegionChoose}
+                  idx={idx}
+               />
             ))}
-         </select>
-         <div style={{ width: "100%" }}>
-            <p style={{ fontSize: "20px" }}>Selected Region:</p>
-            <div style={{ color: "#BD0026", fontSize: "25px" }}>
-               {selectedRegion && <p> {selectedRegion}</p>}
-            </div>
+
+            {/* Display the selected state */}
+            {/* {selectedState && <p>Selected State: {selectedState}</p>} */}
          </div>
+
+         <div className="selected">Selected State: {selectedRegion}</div>
       </div>
    );
 };

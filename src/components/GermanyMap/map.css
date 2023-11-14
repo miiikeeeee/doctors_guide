@@ -1,0 +1,173 @@
+/* map */
+
+:root {
+   --main-scale: 1.02;
+}
+
+map area:hover {
+   transform: scale(2) !important;
+   background-color: red;
+}
+
+.state_0 {
+   bottom: 150px;
+   left: 31.5%;
+   width: 100px;
+   height: 100px;
+}
+.state_1 {
+   top: 190px;
+   right: 35.5%;
+   width: 100px;
+   height: 100px;
+}
+.state_2 {
+   top: 80px;
+   right: 39.5%;
+   width: 140px;
+   height: 100px;
+}
+.state_3 {
+   top: 20%;
+   left: 30.5%;
+   width: 140px;
+   height: 100px;
+}
+.state_3::after {
+   content: "";
+   position: absolute;
+   right: -80px;
+   top: 55px;
+   width: 100%;
+   height: 100%;
+}
+.state_4 {
+   top: 37%;
+   left: 27%;
+   width: 140px;
+   height: 120px;
+}
+/* Saarland */
+.state_5 {
+   top: 67%;
+   left: 30%;
+   width: 40px;
+   height: 40px;
+   background-color: red;
+}
+
+.state_6 {
+   top: 30%;
+   left: 49%;
+   width: 80px;
+   height: 120px;
+}
+.state_7 {
+   top: 47%;
+   left: 55%;
+   width: 120px;
+   height: 100px;
+}
+.state_8 {
+   top: 47%;
+   left: 44%;
+   width: 120px;
+   height: 90px;
+}
+.state_9 {
+   top: 10%;
+   left: 40%;
+   width: 120px;
+   height: 90px;
+}
+.state_10 {
+   top: 47%;
+   left: 44%;
+   width: 120px;
+   height: 90px;
+}
+.state_11 {
+   top: 58%;
+   left: 33%;
+   width: 110px;
+   height: 90px;
+}
+
+.state_12 {
+   bottom: 50px;
+   right: 39%;
+   width: 170px;
+   height: 170px;
+}
+.state_12::after {
+   content: "";
+   position: absolute;
+   left: -50px;
+   top: -10px;
+   width: 60px;
+   height: 60px;
+}
+
+/* Berlin */
+.state_13 {
+   top: 33%;
+   right: 39.5%;
+   width: 30px;
+   height: 30px;
+}
+.state_14 {
+   top: 27%;
+   right: 58%;
+   width: 40px;
+   height: 40px;
+}
+.state_15 {
+   top: 48%;
+   right: 55%;
+   width: 100px;
+   height: 120px;
+}
+
+.map_item {
+   display: flex;
+   justify-content: center;
+}
+
+.map_item img {
+   transition: 0.3s ease;
+}
+
+.map_item span {
+   opacity: 0;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: black;
+   font-weight: 700;
+   z-index: 100;
+   font-size: 12px;
+   margin-bottom: 5px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   /* background-color: red; */
+   text-shadow: -1px 1px 0 #41ba45, 1px 1px 0 #2bbcc6, 1px -1px 0 #42afac,
+      -1px -1px 0 #3fb4c6;
+}
+
+/* common for all states */
+
+.map_item span:hover + img {
+   transform: scale(var(--main-scale));
+}
+
+.map_item span:hover {
+   opacity: 1;
+   transform: scale(var(--main-scale));
+}
+
+.selected {
+   margin-top: 50px;
+   margin-bottom: 20px;
+   font-weight: 600;
+}
