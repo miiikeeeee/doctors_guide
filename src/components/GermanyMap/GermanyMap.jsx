@@ -40,28 +40,29 @@ import state16 from "../../assets/states/Hessen.svg";
 const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
    // Import SVG dynamically using require
    return (
-    
       <div
-      style={{
-        position: "absolute",
-        left: `${x}px`,
-        top: `${y}px`,
-        width: "100%", // Adjust as needed based on your design
-        height: "100%", // Adjust as needed based on your design
-      }}
-      className="map_item"
-    >
-      <span onClick={() => onClick(name)} className={`state_${idx}`}>{name}</span>
-      <img
-        id={id}
-        src={img}
-        alt={name}
-        style={{
-          width: "100%", // Maintain the original width of the image
-          height: "100%", // Maintain the original height of the image
-          objectFit: "cover",
-        }}
-      />
+         style={{
+            position: "absolute",
+            left: `${x}px`,
+            top: `${y}px`,
+            width: "100%", // Adjust as needed based on your design
+            height: "100%", // Adjust as needed based on your design
+         }}
+         className="map_item"
+      >
+         <span onClick={() => onClick(name)} className={`state_${idx}`}>
+            {name}
+         </span>
+         <img
+            id={id}
+            src={img}
+            alt={name}
+            style={{
+               width: "100%", // Maintain the original width of the image
+               height: "100%", // Maintain the original height of the image
+               objectFit: "cover",
+            }}
+         />
       </div>
    );
 };
@@ -78,28 +79,28 @@ const germanyStates = [
       id: "Brandenburg",
       name: "Brandenburg",
       img: state2,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "MecklenburgVorpommern",
       name: "Mecklenburg Vorpommern",
       img: state3,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "Niedersachsen",
       name: "Niedersachsen",
       img: state4,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "NRW",
       name: "Nordrhein-Westfalen",
       img: state5,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
@@ -113,35 +114,35 @@ const germanyStates = [
       id: "SachsenAnhalt",
       name: "Sachsen-Anhalt",
       img: state7,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "Sachsen",
       name: "Sachsen",
       img: state8,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
-      id: "Thueringen",
+      id: "test",
       name: "Thüringen",
       img: state9,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "SchleswigHolstein",
       name: "Schleswig-Holstein",
       img: state10,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
       id: "Thueringen",
       name: "Thüringen",
       img: state11,
-      x: 0 ,
+      x: 0,
       y: 40,
    },
    {
@@ -183,13 +184,16 @@ const GermanyMap = () => {
    }, []);
 
    return (
-      <div>
+      <div className="mapContainer">
+         <div className="selected">Selected State: {selectedRegion}</div>
+
          <div
+            className="map"
             style={{
                position: "relative",
                overflow: "hidden",
                width: "100%",
-               height: "620px",
+               height: "750px",
             }}
          >
             {/* Render each state component dynamically */}
@@ -205,12 +209,7 @@ const GermanyMap = () => {
                   idx={idx}
                />
             ))}
-
-            {/* Display the selected state */}
-            {/* {selectedState && <p>Selected State: {selectedState}</p>} */}
          </div>
-
-         <div className="selected">Selected State: {selectedRegion}</div>
       </div>
    );
 };

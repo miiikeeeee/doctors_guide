@@ -8,7 +8,6 @@ export const languageFlags = {
 export const languages = {
    de: {
       choose_region: "Bitte wählen Sie Ihr Bundesland:",
-      app_name: "Ärzte-App",
       welcome:
          "Herzlich willkommen in unserer App für Ärzte, die planen, nach Deutschland zu ziehen!",
       next: "Weiter",
@@ -60,7 +59,6 @@ export const languages = {
       },
    },
    uk: {
-      app_name: "Лікарський додаток",
       choose_region: "Будь ласка, оберіть свою область:",
       welcome:
          "Ласкаво просимо до нашого додатку для лікарів, які планують переїхати до Німеччини!",
@@ -87,7 +85,6 @@ export const languages = {
       },
    },
    ru: {
-      app_name: "Докторское приложение",
       choose_region: "Пожалуйста, выберите свой регион:",
       welcome:
          "Добро пожаловать в наше приложение для врачей, планирующих переезд в Германию!",
