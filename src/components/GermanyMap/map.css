@@ -223,7 +223,7 @@ map area:hover {
 
 @media screen and (max-width: 600px) {
    .selected {
-      top: 80px; 
+      top: 160px; 
       display: flex;
       justify-content: center;
       width: auto;
