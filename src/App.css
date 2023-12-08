@@ -31,8 +31,19 @@
 }
 
 @media screen and (max-width: 600px) {
+   .page {
+      margin-top: 130px;
+   }
+
    .page2 {
       margin-top: 150px;
+   }
+
+   .firstPageContent {
+      top: 5vh;
+      width: 80%;
+      border-radius: 5px;
+      padding: 15px !important;
    }
 
    h2 {

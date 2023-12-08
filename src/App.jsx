@@ -29,7 +29,9 @@ function App() {
 
    useEffect(() => {
       localStorage.setItem("currentPage", currentPage);
+      window.scrollTo(0, 0);
    }, [currentPage]);
+  
 
    return (
       <div className="App">

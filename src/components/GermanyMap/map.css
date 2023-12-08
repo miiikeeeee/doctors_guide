@@ -241,6 +241,7 @@ map area:hover {
       left: 30px;
       max-width: 300px;
       position: relative;
+      z-index: 1;
       width: 100%;
    }
 }
