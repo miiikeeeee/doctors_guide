@@ -2,6 +2,7 @@
 
 :root {
    --main-scale: 1.02;
+   --main-scale-phone: 1.04;
 }
 
 .mapContainer {
@@ -228,6 +229,16 @@ map area:hover {
       -webkit-tap-highlight-color: transparent;
       transition: all 0.5s ease
    }
+
+   .map_item span:hover + img {
+      transform: scale(var(--main-scale-phone));
+   }
+   
+   .map_item span:hover {
+      opacity: 1;
+      transform: scale(var(--main-scale-phone));
+   }
+   
    .map_item img {
       transition: all 0.5s ease;
    }
