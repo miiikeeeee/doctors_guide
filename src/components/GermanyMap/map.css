@@ -225,13 +225,9 @@ map area:hover {
 @media screen and (max-width: 600px) {
 
    .map_item span {
-      -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
+      -webkit-tap-highlight-color: transparent;
    }
+   
    .selected {
       top: 0px; 
       margin-bottom: 20px;
