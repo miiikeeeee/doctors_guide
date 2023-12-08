@@ -186,7 +186,7 @@ const GermanyMap = () => {
 
    return (
       <div className="mapContainer">
-         <div className="selected">Selected State: {selectedRegion}</div>
+         <div className="selected">{selectedRegion}</div>
 
          <div
             className="map"

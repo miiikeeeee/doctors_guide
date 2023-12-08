@@ -16,15 +16,15 @@
    height: 40vh;
    width: 100%;
    background-color: red;
-   background: url('../assets/first_page_bg.png');
+   background: url("../assets/first_page_bg.png");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: 50% 50%;
    position: absolute;
 }
 
-.firstPageContent { 
-   background-color: #2A7C6F;
+.firstPageContent {
+   background-color: #2a7c6f;
    position: relative;
    top: 17vh;
    padding: 20px 50px !important;
@@ -32,6 +32,10 @@
 
 @media screen and (max-width: 600px) {
    .page2 {
-      margin-top: 220px;
+      margin-top: 150px;
+   }
+
+   h2 {
+      margin-top: 10px !important;
    }
 }
