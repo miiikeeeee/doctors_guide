@@ -76,7 +76,7 @@ function App() {
             )}
 
             {currentPage === 2 && (
-               <div className="page">
+               <div className="page page2">
                   {/* Second page content */}
                   <h2 className="mt-20">{languages[selectedLanguage].choose_region}</h2>
 

@@ -7,8 +7,17 @@
 .mapContainer {
    margin: 0 auto;
    overflow: hidden;
+   width: 600px;
+   max-height: 450px;
 }
 
+@media screen and (max-width: 600px) {
+   .mapContainer {
+      width: 120%;
+      left: -70px;
+      position: relative;
+   }
+}
 .map {
    margin-top: -100px;
 }
@@ -18,42 +27,52 @@ map area:hover {
    background-color: red;
 }
 
+.img_0 {
+   position: absolute;
+   left: -3%;
+   bottom: 3.5%;
+   width: 80px;
+   height: 120px;
+}
 .state_0 {
-   bottom: 150px;
-   left: 31.5%;
-   width: 100px;
-   height: 100px;
+   bottom: 120px;
+   left: 20.5%;
+   width: 80px;
+   height: 120px;
 }
 .state_1 {
-   top: 190px;
-   right: 35.5%;
+   top: 30%;
+   right: 25.5%;
    width: 100px;
    height: 100px;
 }
+/* MecklenburgVorpommern */
 .state_2 {
    top: 80px;
-   right: 39.5%;
-   width: 140px;
-   height: 100px;
+   right: 33.5%;
+   width: 100px;
+   height: 80px;
 }
+/* Niedersachsen */
 .state_3 {
-   top: 20%;
-   left: 30.5%;
-   width: 140px;
-   height: 100px;
+   top: 25%;
+   left: 28.5%;
+   width: 100px;
+   height: 110px;
+   
 }
 .state_3::after {
    content: "";
    position: absolute;
-   right: -80px;
-   top: 55px;
-   width: 100%;
-   height: 100%;
+   top: 0%;
+   left: 0.5%;
+   width: 50px;
+   height: 120px;
 }
 .state_4 {
    top: 37%;
-   left: 27%;
-   width: 140px;
+   left: 17%;
+   width: 90px;
    height: 120px;
 }
 /* Saarland */
@@ -80,32 +99,38 @@ map area:hover {
 .state_8 {
    top: 47%;
    left: 44%;
-   width: 120px;
+   width: 10px;
    height: 90px;
 }
+/* SchleswigHolstein */
 .state_9 {
    top: 10%;
-   left: 40%;
+   left: 30%;
    width: 120px;
    height: 90px;
 }
 .state_10 {
    top: 47%;
-   left: 44%;
-   width: 120px;
+   left: 42%;
+   width: 80px;
    height: 90px;
 }
+/* RheinlandPfalz */
+.img_11 {
+   left: 1.3%;
+   position: relative;
+}
 .state_11 {
-   top: 58%;
-   left: 33%;
-   width: 110px;
-   height: 90px;
+   top: 56%;
+   left: 25%;
+   width: 80px;
+   height: 100px;
 }
 
 .state_12 {
-   bottom: 50px;
-   right: 39%;
-   width: 170px;
+   bottom: 30px;
+   right: 36%;
+   width: 120px;
    height: 170px;
 }
 .state_12::after {
@@ -120,13 +145,14 @@ map area:hover {
 /* Berlin */
 .state_13 {
    top: 33%;
-   right: 39.5%;
+   right: 33.5%;
    width: 30px;
    height: 30px;
 }
+/* Bremen */
 .state_14 {
    top: 27%;
-   right: 58%;
+   right: 62%;
    width: 40px;
    height: 40px;
 }
@@ -192,5 +218,14 @@ map area:hover {
    .selected {
        top: 145px; 
        right: 0;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .selected {
+      top: 80px; 
+      display: flex;
+      justify-content: center;
+      width: auto;
    }
 }

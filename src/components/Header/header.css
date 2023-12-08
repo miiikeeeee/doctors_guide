@@ -28,3 +28,12 @@
 .mainLogo {
    font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+   .header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+   }
+}

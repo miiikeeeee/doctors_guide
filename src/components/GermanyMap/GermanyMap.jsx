@@ -45,8 +45,8 @@ const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
             position: "absolute",
             left: `${x}px`,
             top: `${y}px`,
-            width: "100%", // Adjust as needed based on your design
-            height: "100%", // Adjust as needed based on your design
+            width: "600px", // Adjust as needed based on your design
+            height: "520px", // Adjust as needed based on your design
          }}
          className="map_item"
       >
@@ -54,6 +54,7 @@ const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
             {name}
          </span>
          <img
+            className={`img_${idx}`}
             id={id}
             src={img}
             alt={name}

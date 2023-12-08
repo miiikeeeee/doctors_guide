@@ -29,3 +29,9 @@
    top: 17vh;
    padding: 20px 50px !important;
 }
+
+@media screen and (max-width: 600px) {
+   .page2 {
+      margin-top: 220px;
+   }
+}
