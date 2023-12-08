@@ -15,6 +15,7 @@
    .mapContainer {
       width: 120%;
       left: -70px;
+      max-height: 510px;
       position: relative;
    }
 }
