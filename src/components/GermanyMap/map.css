@@ -26,12 +26,11 @@
 
 map area:hover {
    transform: scale(2) !important;
-   background-color: red;
 }
 
 .img_0 {
    position: absolute;
-   left: -3%;
+   left: -2.73%;
    bottom: 3.5%;
    width: 80px;
    height: 120px;
@@ -57,7 +56,7 @@ map area:hover {
 }
 /* Niedersachsen */
 .state_3 {
-   top: 25%;
+   top: 27%;
    left: 28.5%;
    width: 100px;
    height: 110px;
@@ -66,10 +65,10 @@ map area:hover {
 .state_3::after {
    content: "";
    position: absolute;
-   top: 0%;
-   left: 0.5%;
-   width: 50px;
-   height: 120px;
+   top: -20%;
+   left: -40%;
+   width: 120px;
+   height: 60px;
 }
 .state_4 {
    top: 37%;
@@ -78,12 +77,15 @@ map area:hover {
    height: 120px;
 }
 /* Saarland */
+.img_5 {
+   position: relative;
+   right: 1%;
+ }
 .state_5 {
-   top: 67%;
-   left: 30%;
+   bottom: 25%;
+   left: 25%;
    width: 40px;
-   height: 40px;
-   background-color: red;
+   height: 50px;
 }
 
 .state_6 {
@@ -109,24 +111,35 @@ map area:hover {
    top: 10%;
    left: 30%;
    width: 120px;
-   height: 90px;
+   height: 80px;
 }
 .state_10 {
    top: 47%;
    left: 42%;
    width: 80px;
    height: 90px;
+
 }
 /* RheinlandPfalz */
 .img_11 {
-   left: 1.3%;
+   left: 1.7%;
+   bottom: 1%;
    position: relative;
 }
 .state_11 {
    top: 56%;
    left: 25%;
    width: 80px;
-   height: 100px;
+   height: 42px;
+}
+
+.state_11::after {
+   content: "";
+   position: absolute;
+   bottom: -70%;
+   right: -10%;
+   width: 20px;
+   height: 90px;
 }
 
 .state_12 {
@@ -162,7 +175,14 @@ map area:hover {
    top: 48%;
    right: 55%;
    width: 100px;
-   height: 120px;
+   height: 100px;
+   border-radius: 50%;
+}
+.state_16 {
+   top: 24%;
+   right: 57%;
+   width: 25px;
+   height: 25px;
 }
 
 .map_item {
@@ -187,7 +207,6 @@ map area:hover {
    margin-bottom: 5px;
    cursor: pointer;
    transition: all 0.2s ease;
-   /* background-color: red; */
    text-shadow: -1px 1px 0 #41ba45, 1px 1px 0 #2bbcc6, 1px -1px 0 #42afac,
       -1px -1px 0 #3fb4c6;
 }

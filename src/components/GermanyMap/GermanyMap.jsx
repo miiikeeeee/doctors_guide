@@ -30,11 +30,12 @@ import state8 from "../../assets/states/Sachsen.svg";
 import state9 from "../../assets/states/Thüringen.svg";
 import state10 from "../../assets/states/Schleswig-Holstein.svg";
 import state11 from "../../assets/states/Thüringen.svg";
-import state12 from "../../assets/states/Rheinland-Pfalz.svg";
+import state12 from "../../assets/states/Rheinland-Pfalz-t.svg";
 import state13 from "../../assets/states/Bayern.svg";
 import state14 from "../../assets/states/Berlin.svg";
 import state15 from "../../assets/states/Bremen.svg";
 import state16 from "../../assets/states/Hessen.svg";
+import state17 from "../../assets/states/Hamburg.svg";
 
 // Individual state component
 const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
@@ -50,7 +51,7 @@ const StateComponent = ({ id, idx, name, img, x, y, onClick }) => {
          }}
          className="map_item"
       >
-         <span onClick={() => onClick(name)} className={`state_${idx}`}>
+         <span onTouchEnd={()=> onClick(name)} onClick={() => onClick(name)} className={`state_${idx}`}>
             {name}
          </span>
          <img
@@ -157,6 +158,7 @@ const germanyStates = [
    { id: "Berlin", name: "Berlin", img: state14, x: 0, y: 40 },
    { id: "Bremen", name: "Bremen", img: state15, x: 0, y: 40 },
    { id: "Hessen", name: "Hessen", img: state16, x: 0, y: 40 },
+   { id: "Hamburg", name: "Hamburg", img: state17, x: 0, y: 40 },
 ];
 
 const GermanyMap = () => {
