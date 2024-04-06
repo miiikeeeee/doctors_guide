@@ -47,15 +47,17 @@ export const languages = {
       continue: "Fortfahren",
       language: "Sprache wählen:",
       options: [
-         { value: "de", label: "Almanca" },
-         { value: "en", label: "İngilizce" },
-         { value: "uk", label: "Ukraynaca" },
-         { value: "ru", label: "Rusça" },
-         { value: "tr", label: "Türkçe" },
-         { value: "ar", label: "Arapça" },
-         { value: "fr", label: "Fransızca" },
-         { value: "es", label: "İspanyolca" },
-         { value: "pl", label: "Lehçe" },
+         [
+            { "value": "de", "label": "Deutsch" },
+            { "value": "en", "label": "Englisch" },
+            { "value": "uk", "label": "Ukrainisch" },
+            { "value": "ru", "label": "Russisch" },
+            { "value": "tr", "label": "Türkisch" },
+            { "value": "ar", "label": "Arabisch" },
+            { "value": "fr", "label": "Französisch" },
+            { "value": "es", "label": "Spanisch" },
+            { "value": "pl", "label": "Polnisch" }
+        ]
       ],
       requirements: {
          title: "Voraussetzungen für die medizinische Anerkennung in Deutschland:",
