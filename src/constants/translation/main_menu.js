@@ -4,9 +4,6 @@ import linksIcon from "../../../assets/links.svg";
 import learnLangIcon from "../../../assets/exam_prep.svg";
 import workIcon from "../../../assets/work.svg";
 import unique from "../../../assets/unique.svg";
-import { LANDS_INFO } from "../lands";
-
-const storedRegion = localStorage.getItem("selectedRegion");
 
 export const languagesMainMenu = {
    de: {

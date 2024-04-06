@@ -5,6 +5,8 @@ import GermanyMap from "./components/GermanyMap/GermanyMap";
 import Header from "./components/Header/Header";
 import MainMenu from "./components/MainMenu/MainMenu";
 
+const GERMAN_MAP_PAGE = 3;
+
 function App() {
    const storedPage = localStorage.getItem("currentPage");
    const storedRegion = localStorage.getItem("selectedRegion");
@@ -30,7 +32,7 @@ function App() {
 
    const redirectToRefionPage = (e) => {
       e.preventDefault();
-      setCurrentPage(2)
+      setCurrentPage(GERMAN_MAP_PAGE)
    }
 
    useEffect(() => {
