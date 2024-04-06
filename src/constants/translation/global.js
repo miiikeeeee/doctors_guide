@@ -47,7 +47,6 @@ export const languages = {
       continue: "Fortfahren",
       language: "Sprache wählen:",
       options: [
-         [
             { "value": "de", "label": "Deutsch" },
             { "value": "en", "label": "Englisch" },
             { "value": "uk", "label": "Ukrainisch" },
@@ -57,7 +56,6 @@ export const languages = {
             { "value": "fr", "label": "Französisch" },
             { "value": "es", "label": "Spanisch" },
             { "value": "pl", "label": "Polnisch" }
-        ]
       ],
       requirements: {
          title: "Voraussetzungen für die medizinische Anerkennung in Deutschland:",
