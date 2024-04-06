@@ -2,6 +2,10 @@
    margin-top: 70px;
 }
 
+.flex {
+   display: flex;
+}
+
 .flexBt {
    display: flex;
    align-items: center;
@@ -15,12 +19,13 @@
 .firstPageImageBlock {
    height: 40vh;
    width: 100%;
-   background-color: red;
    background: url("../assets/first_page_bg.png");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: 50% 50%;
    position: absolute;
+   left: 0;
+   top: 0;
 }
 
 .firstPageContent {
@@ -49,4 +54,37 @@
    h2 {
       margin-top: 10px !important;
    }
+}
+
+.main_menu__content {
+   margin-top: 150px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   min-height: calc(100vh - 500px);
+   background-color: #2a7c6f;
+   z-index: 100;
+}
+
+.main_menu_back {
+   margin-top: auto;
+   width: 35px;
+   height: 28px;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   left: 20px;
+   bottom: 0;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+   transition: all 0.2s ease;
+}
+
+a:hover  {
+   color: rgb(143, 186, 143);
+   text-decoration: underline;
 }

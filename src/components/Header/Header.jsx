@@ -1,11 +1,11 @@
-import { languageFlags, languages } from "../../constants/translation";
+import { languageFlags, languages } from "../../constants/translation/global";
 import './header.css';
 
 
 const Header = ({ selectedLanguage, handleChangeLanguage }) => {
    return (
       <header className="header flexBt">
-         <h2 className="upcase mainLogo">Germanmove</h2>
+         <h2 className="upcase mainLogo">Germanmovein</h2>
          <div className="flexBt">
             <span style={{ marginRight: "20px" }}>
                {languages[selectedLanguage].language}

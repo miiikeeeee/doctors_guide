@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { thirdStepTranslation } from "../../constants/translation";
+import { thirdStepTranslation } from "../../constants/translation/global";
 
 const ApplicationApprovalChecklist = ({ language }) => {
    const {

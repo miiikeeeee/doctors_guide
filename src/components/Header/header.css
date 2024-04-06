@@ -1,5 +1,5 @@
 .header {
-   background-color: #71bdb2fa;
+   background-color: #4eb7a7fa;
    color: white;
    padding: 10px 0;
    text-align: center;
@@ -14,16 +14,30 @@
 .langSelect {
    display: flex;
    padding: 10px;
-   padding-left: 15px;
-   padding-right: 5px;
    border-radius: 24px;
    background: #2a7c6f;
    margin-top: 0;
    border: none;
    color: white;
-
    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   border: 1px solid transparent;
+   outline: none;
 }
+
+.langSelect:hover {
+   background: #5abbab;
+   color: #384e4b;
+   border: 1px solid white;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   background: transparent;
+ }
 
 
 .mainLogo {

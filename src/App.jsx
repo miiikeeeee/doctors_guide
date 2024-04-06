@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { languages } from "./constants/translation";
+import { languages } from "./constants/translation/global";
 import "./App.css";
 import GermanyMap from "./components/GermanyMap/GermanyMap";
 import ApplicationApprovalChecklist from "./components/Approval/ThirdStep";
 import Header from "./components/Header/Header";
+import MainMenu from "./components/MainMenu/MainMenu";
 
 function App() {
    const storedPage = localStorage.getItem("currentPage");
+   const storedRegion = localStorage.getItem("selectedRegion");
    const initialPage = storedPage ? parseInt(storedPage, 10) : 1;
    const storedLanguage = localStorage.getItem("selectedLanguage");
    const initialLanguage = storedLanguage ? storedLanguage : "de";
@@ -27,11 +29,15 @@ function App() {
       setCurrentPage(currentPage - 1);
    };
 
+   const redirectToRefionPage = (e) => {
+      e.preventDefault();
+      setCurrentPage(2)
+   }
+
    useEffect(() => {
       localStorage.setItem("currentPage", currentPage);
       window.scrollTo(0, 0);
    }, [currentPage]);
-  
 
    return (
       <div className="App">
@@ -80,7 +86,9 @@ function App() {
             {currentPage === 2 && (
                <div className="page page2">
                   {/* Second page content */}
-                  <h2 className="mt-20">{languages[selectedLanguage].choose_region}</h2>
+                  <h2 className="mt-20">
+                     {languages[selectedLanguage].choose_region}
+                  </h2>
 
                   <GermanyMap />
                   <button onClick={handlePrevPage}>
@@ -100,6 +108,28 @@ function App() {
                   <button onClick={handlePrevPage}>
                      {languages[selectedLanguage].back}
                   </button>
+                  <button onClick={handleNextPage}>
+                     {languages[selectedLanguage].continue}
+                  </button>
+               </div>
+            )}
+            {currentPage === 4 && (
+               <div className="page page1 containerSmall mt-20">
+                  {/* Third page content */}
+                  <div className="firstPageImageBlock"></div>
+                  <div className={"main_menu__content"}>
+                     <MainMenu
+                        redirectToRefionPage={redirectToRefionPage}
+                        storedRegion={storedRegion}
+                        language={selectedLanguage}
+                     />
+                     <button
+                        className={"main_menu_back"}
+                        onClick={handlePrevPage}
+                     >
+                        &#8592;
+                     </button>
+                  </div>
                </div>
             )}
          </div>
