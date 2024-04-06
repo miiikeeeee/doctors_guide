@@ -9,7 +9,7 @@ import MainMenu from "./components/MainMenu/MainMenu";
 function App() {
    const storedPage = localStorage.getItem("currentPage");
    const storedRegion = localStorage.getItem("selectedRegion");
-   const initialPage = storedPage ? parseInt(storedPage, 10) : 1;
+   const initialPage = storedPage ? parseInt(storedPage, 10) : 2;
    const storedLanguage = localStorage.getItem("selectedLanguage");
    const initialLanguage = storedLanguage ? storedLanguage : "de";
    const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
@@ -49,7 +49,7 @@ function App() {
 
          {/* Content */}
          <div className="content">
-            {currentPage === 1 && (
+            {currentPage === 2 && (
                <div className="page page1">
                   <div className="firstPageImageBlock"></div>
                   <div className="containerSmall firstPageContent">
@@ -83,7 +83,7 @@ function App() {
                </div>
             )}
 
-            {currentPage === 2 && (
+            {currentPage === 3 && (
                <div className="page page2">
                   {/* Second page content */}
                   <h2 className="mt-20">
@@ -101,18 +101,6 @@ function App() {
                </div>
             )}
 
-            {currentPage === 3 && (
-               <div className="page containerSmall mt-20">
-                  {/* Third page content */}
-                  <ApplicationApprovalChecklist language={selectedLanguage} />
-                  <button onClick={handlePrevPage}>
-                     {languages[selectedLanguage].back}
-                  </button>
-                  <button onClick={handleNextPage}>
-                     {languages[selectedLanguage].continue}
-                  </button>
-               </div>
-            )}
             {currentPage === 4 && (
                <div className="page page1 containerSmall mt-20">
                   {/* Third page content */}

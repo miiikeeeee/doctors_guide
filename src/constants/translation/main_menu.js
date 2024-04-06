@@ -3,6 +3,7 @@ import examIcon from "../../../assets/exam.svg";
 import linksIcon from "../../../assets/links.svg";
 import learnLangIcon from "../../../assets/exam_prep.svg";
 import workIcon from "../../../assets/work.svg";
+import unique from "../../../assets/unique.svg";
 import { LANDS_INFO } from "../lands";
 
 const storedRegion = localStorage.getItem("selectedRegion");
@@ -475,18 +476,24 @@ export const main_menu_items = {
                de: "Regionale Chats",
                link: "/regional-chats",
             },
-            {
-               en: "Unique Services",
-               fr: "Services uniques",
-               es: "Servicios únicos",
-               ar: "خدمات فريدة من نوعها",
-               tr: "Benzersiz Hizmetler",
-               pl: "Unikalne usługi",
-               uk: "Унікальні сервіси",
-               ru: "Уникальные услуги",
-               de: "Einzigartige Dienstleistungen",
-               link: "/unique-services",
-            },
+         ],
+      },
+      {
+         order: 6,
+         icon: unique,
+         title: {
+            en: "Unique Services",
+            fr: "Services uniques",
+            es: "Servicios únicos",
+            ar: "خدمات فريدة من نوعها",
+            tr: "Benzersiz Hizmetler",
+            pl: "Unikalne usługi",
+            uk: "Унікальні сервіси",
+            ru: "Уникальные услуги",
+            de: "Einzigartige Dienstleistungen",
+            link: "/unique-services",
+         },
+         items: [
             {
                en: "Personal Consultation",
                fr: "Consultation personnelle",
