@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { languages } from "./constants/translation/global";
 import "./App.css";
 import GermanyMap from "./components/GermanyMap/GermanyMap";
-import ApplicationApprovalChecklist from "./components/Approval/ThirdStep";
 import Header from "./components/Header/Header";
 import MainMenu from "./components/MainMenu/MainMenu";
 
