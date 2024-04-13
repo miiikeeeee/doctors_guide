@@ -5,6 +5,7 @@ import learnLangIcon from "../../../assets/exam_prep.svg";
 import workIcon from "../../../assets/work.svg";
 import unique from "../../../assets/unique.svg";
 
+
 export const languagesMainMenu = {
    de: {
       firstSent:
